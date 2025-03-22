@@ -44,6 +44,6 @@ function playRound(humanChoice, computerChoice) {
   }
   
   function getHumanChoice() {
-    const humanChoice = `Rock`;
+    let humanChoice = prompt(`What is it going to be: rock, paper or scissors?`);
     console.log(`human says: ${humanChoice}`);
   }
