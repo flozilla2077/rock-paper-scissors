@@ -27,25 +27,25 @@ function playRound(humanChoice, computerChoice) {
   let humanScore = 0;
   let computerScore = 0;
   
-  playRound(humanSelection, computerSelection);
-
   function getComputerChoice()    {
     const computerChoiceNum = Math.random();
     console.log(computerChoiceNum);
-    let computerChoice = 0; 
-    console.log(computerChoiceNum);
     if (computerChoiceNum <= 1/3) {
-        computerChoice = `Rock`;
-    } else if ( 1/3 < computerChoiceNum <= 3/3) {
-        computerChoice = `Paper`;
+        getComputerChoice = `Rock`;
+    } else if ( 1/3 < computerChoiceNum < 3/3) {
+        getComputerChoice = `Paper`;
     }  else {
-        computerChoice = `Scissors`;
+        getComputerChoice = `Scissors`;
     }
-    console.log(`computer says: ${computerChoice}`);
-    return computerChoice;
+    console.log(`computer says: ${getComputerChoice}`);
+    return getComputerChoice;
   }
   
-  function getHumanChoice() {
-    let humanChoice = prompt(`What is it going to be: rock, paper or scissors?`);
-    console.log(`human says: ${humanChoice}`);
+  function getHumanChoice(getHumanChoice)   {
+    getHumanChoice = prompt(`What is it going to be: rock, paper or scissors?`);
+    console.log(`human says: ${getHumanChoice}`);
   }
+
+ /*  function playRound(, ) {
+
+  } */
