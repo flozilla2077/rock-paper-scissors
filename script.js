@@ -22,9 +22,13 @@ function playRound(humanChoice, computerChoice) {
 
 let humanScore = 0;
 let computerScore = 0;
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-let gamewinner = getPlayRound(computerSelection, humanSelection);
+
+  for (let step = 0; step < 5; step++)  {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    getPlayRound(computerSelection, humanSelection);
+    console.log(`Round ${step+1}: human has ${humanScore} / computer has ${computerScore}`);
+  }
 
   
   function getComputerChoice(computerSelection)    {
@@ -37,14 +41,14 @@ let gamewinner = getPlayRound(computerSelection, humanSelection);
     }  else {
         computerSelection = `Scissors`;
     }
-    console.log(`computer says: ${computerSelection}`);
+/*     console.log(`computer says: ${computerSelection}`); */
     return computerSelection;
   }
 
   
   function getHumanChoice(humanSelection)   {
     humanSelection = prompt(`What is it going to be: rock, paper or scissors?`);
-    console.log(`human says: ${humanSelection}`);
+/*     console.log(`human says: ${humanSelection}`); */
     return humanSelection.charAt(0).toUpperCase() + humanSelection.slice(1).toLowerCase();
   }
 
@@ -54,51 +58,51 @@ let gamewinner = getPlayRound(computerSelection, humanSelection);
     // if human plays rock && computer plays rock, then humanscore +0 and computer score +0
 
     if (humanSelection === `Rock` && computerSelection === `Rock`)   {
-        console.log("tie");
+/*         console.log("tie"); */
     }
     // if human plays rock && computer plays papers, then humanscore +0 and computer score +1
     else if (humanSelection === `Rock` && computerSelection === `Paper`)   {
-        console.log("Computer Wins");
+/*         console.log("Computer Wins"); */
         ++computerScore;
     }
     // if human plays rock && computer plays scissors, then humanscore +1 and computer score +0
     else if (humanSelection === `Rock` && computerSelection === `Scissors`)   {
-        console.log("Human Wins");
+/*         console.log("Human Wins"); */
         ++humanScore;
     }
     // if human plays paper && computer plays rock, then humanscore +1 and computer score +0
     else if (humanSelection === `Paper` && computerSelection === `Rock`)   {
-        console.log("Human Wins");
+/*         console.log("Human Wins"); */
         ++humanScore;
     }    // if human plays paper && computer plays paper, then humanscore +0 and computerscore +0
     else if (humanSelection === `Paper` && computerSelection === `Paper`)   {
-        console.log("tie");
+/*         console.log("tie"); */
     }
     // if human plays paper && computer plays scissors, then human score +0 and computer score +1
     else if (humanSelection === `Paper` && computerSelection === `Scissors`)   {
-        console.log("Computer Wins");
+/*         console.log("Computer Wins"); */
         ++computerScore;
     }
     // if human plays scissors && computer plays rock, then human score +0 and computer score +1
     else if (humanSelection === `Scissors` && computerSelection === `Rock`)   {
-        console.log("Computer Wins");
+/*         console.log("Computer Wins"); */
         ++computerScore;
     }
     // if human plays scissors && computer plays paper, then human score +1 and computer score +0
     else if (humanSelection === `Scissors` && computerSelection === `Paper`)   {
-        console.log("Human Wins");
+/*         console.log("Human Wins"); */
         ++humanScore;
     }
     // if human plays scissors && computer plays scissors, then human score +0 and computer score +0
     else if (humanSelection === `Scissors` && computerSelection === `Scissors`)   {
-        console.log("tie");
+/*         console.log("tie"); */
     }
     // Else
     else {
         console.log("invalid input");
     }
 
-    console.log(`the computer has ${computerScore} and the human has ${humanScore}`);
-
+/*     console.log(`the computer has ${computerScore} and the human has ${humanScore}`); */
+    return {computerScore, humanScore};
 } 
 
